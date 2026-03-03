@@ -1,0 +1,526 @@
+/* ==========================================================================
+   WP Sentinel Security — Admin Base Styles
+   ========================================================================== */
+
+/* CSS Variables */
+:root {
+	--sentinel-primary:        #6366f1;
+	--sentinel-primary-dark:   #4f46e5;
+	--sentinel-primary-light:  #a5b4fc;
+	--sentinel-bg:             #f8f9fa;
+	--sentinel-card-bg:        #ffffff;
+	--sentinel-border:         #e5e7eb;
+	--sentinel-text:           #1f2937;
+	--sentinel-text-muted:     #6b7280;
+	--sentinel-radius:         8px;
+	--sentinel-shadow:         0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+
+	/* Severity colors */
+	--severity-critical:       #dc2626;
+	--severity-high:           #ea580c;
+	--severity-medium:         #ca8a04;
+	--severity-low:            #16a34a;
+	--severity-info:           #2563eb;
+}
+
+/* Layout */
+.sentinel-wrap {
+	margin: 0 20px 0 0;
+	color: var(--sentinel-text);
+}
+
+.sentinel-page-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 20px 0 24px;
+}
+
+.sentinel-header-left {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.sentinel-header-icon {
+	font-size: 28px;
+	color: var(--sentinel-primary);
+	width: 32px;
+	height: 32px;
+}
+
+.sentinel-version-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	background: var(--sentinel-primary);
+	color: #fff;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: 600;
+	vertical-align: middle;
+}
+
+/* Cards */
+.sentinel-card {
+	background: var(--sentinel-card-bg);
+	border: 1px solid var(--sentinel-border);
+	border-radius: var(--sentinel-radius);
+	padding: 24px;
+	margin-bottom: 20px;
+	box-shadow: var(--sentinel-shadow);
+}
+
+.sentinel-card h2 {
+	margin: 0 0 16px;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--sentinel-text);
+	border-bottom: 1px solid var(--sentinel-border);
+	padding-bottom: 12px;
+}
+
+/* Buttons */
+.sentinel-btn-scan {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Progress bar */
+.sentinel-progress-bar-wrap {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 12px 0;
+}
+
+.sentinel-progress-bar {
+	flex: 1;
+	background: var(--sentinel-border);
+	border-radius: 4px;
+	height: 10px;
+	overflow: hidden;
+}
+
+.sentinel-progress-fill {
+	height: 100%;
+	background: var(--sentinel-primary);
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+/* Tables */
+.sentinel-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.sentinel-table th,
+.sentinel-table td {
+	padding: 10px 14px;
+	text-align: left;
+	border-bottom: 1px solid var(--sentinel-border);
+}
+
+.sentinel-table th {
+	font-weight: 600;
+	color: var(--sentinel-text-muted);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background: var(--sentinel-bg);
+}
+
+.sentinel-table tbody tr:hover {
+	background: #f9fafb;
+}
+
+/* Badges */
+.sentinel-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.sentinel-badge-critical { background: #fef2f2; color: var(--severity-critical); }
+.sentinel-badge-high     { background: #fff7ed; color: var(--severity-high); }
+.sentinel-badge-medium   { background: #fefce8; color: var(--severity-medium); }
+.sentinel-badge-low      { background: #f0fdf4; color: var(--severity-low); }
+.sentinel-badge-info     { background: #eff6ff; color: var(--severity-info); }
+.sentinel-badge-completed { background: #f0fdf4; color: #16a34a; }
+.sentinel-badge-running   { background: #eff6ff; color: #2563eb; }
+.sentinel-badge-failed    { background: #fef2f2; color: #dc2626; }
+.sentinel-badge-pending   { background: #f9fafb; color: #6b7280; }
+.sentinel-badge-cancelled { background: #f9fafb; color: #6b7280; }
+
+/* Urgency labels — shown beneath severity badge in scan results */
+.sentinel-urgency-label {
+	display: block;
+	font-size: 11px;
+	color: var(--sentinel-text-muted);
+	margin-top: 3px;
+	font-weight: 400;
+	text-transform: none;
+}
+
+/* Finding actions column */
+.sentinel-finding-actions {
+	white-space: nowrap;
+}
+
+/* Filter tabs */
+.sentinel-filter-tabs {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 16px;
+	border-bottom: 2px solid var(--sentinel-border);
+	padding-bottom: 0;
+}
+
+.sentinel-tab {
+	padding: 8px 16px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 13px;
+	color: var(--sentinel-text-muted);
+	border-bottom: 2px solid transparent;
+	margin-bottom: -2px;
+	border-radius: 4px 4px 0 0;
+	transition: color 0.2s;
+}
+
+.sentinel-tab:hover { color: var(--sentinel-primary); }
+.sentinel-tab.active { color: var(--sentinel-primary); border-bottom-color: var(--sentinel-primary); font-weight: 600; }
+
+.sentinel-tab-critical.active { color: var(--severity-critical); border-bottom-color: var(--severity-critical); background: #fef2f2; }
+.sentinel-tab-high.active     { color: var(--severity-high);     border-bottom-color: var(--severity-high);     background: #fff7ed; }
+.sentinel-tab-medium.active   { color: var(--severity-medium);   border-bottom-color: var(--severity-medium);   background: #fefce8; }
+.sentinel-tab-low.active      { color: var(--severity-low);      border-bottom-color: var(--severity-low);      background: #f0fdf4; }
+.sentinel-tab-info.active     { color: var(--severity-info);     border-bottom-color: var(--severity-info);     background: #eff6ff; }
+
+/* Ver guía / View Guide button — always blue for visibility */
+.sentinel-vuln-details {
+	background: #2563eb !important;
+	color: #fff !important;
+	border-color: #2563eb !important;
+}
+.sentinel-vuln-details:hover {
+	background: #1d4ed8 !important;
+	border-color: #1d4ed8 !important;
+	color: #fff !important;
+}
+
+/* Notifications */
+.sentinel-notification {
+	position: fixed;
+	top: 60px;
+	right: 20px;
+	padding: 14px 20px;
+	border-radius: var(--sentinel-radius);
+	box-shadow: 0 4px 12px rgba(0,0,0,.15);
+	z-index: 99999;
+	font-size: 13px;
+	max-width: 380px;
+	animation: sentinelSlideIn 0.3s ease;
+}
+
+.sentinel-notification-success { background: #f0fdf4; border-left: 4px solid #16a34a; color: #14532d; }
+.sentinel-notification-error   { background: #fef2f2; border-left: 4px solid #dc2626; color: #7f1d1d; }
+.sentinel-notification-info    { background: #eff6ff; border-left: 4px solid #2563eb; color: #1e3a8a; }
+
+/* Next-step hint inside notifications */
+.sentinel-notification-next {
+	margin-top: 6px;
+	font-size: 12px;
+	opacity: 0.85;
+	border-top: 1px solid rgba(0,0,0,.08);
+	padding-top: 6px;
+}
+
+@keyframes sentinelSlideIn {
+	from { opacity: 0; transform: translateX(20px); }
+	to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Nav header */
+.sentinel-nav-header {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border: 1px solid var(--sentinel-border);
+	border-radius: var(--sentinel-radius);
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.sentinel-nav-brand {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	border-right: 1px solid var(--sentinel-border);
+	font-weight: 700;
+	color: var(--sentinel-primary);
+	white-space: nowrap;
+}
+
+.sentinel-nav-tabs {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+.sentinel-nav-tabs li { margin: 0; }
+
+.sentinel-nav-tab {
+	display: block;
+	padding: 12px 16px;
+	color: var(--sentinel-text-muted);
+	text-decoration: none;
+	font-size: 13px;
+	border-bottom: 3px solid transparent;
+	transition: color 0.2s, border-color 0.2s;
+	white-space: nowrap;
+}
+
+.sentinel-nav-tab:hover { color: var(--sentinel-primary); }
+
+.sentinel-nav-tab-active {
+	color: var(--sentinel-primary);
+	border-bottom-color: var(--sentinel-primary);
+	font-weight: 600;
+}
+
+/* ── Executive Summary Panel ─────────────────────────────────────────────── */
+.sentinel-executive-summary {
+	border-left: 4px solid var(--sentinel-primary);
+}
+
+.sentinel-executive-top {
+	display: flex;
+	align-items: flex-start;
+	gap: 32px;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--sentinel-border);
+}
+
+.sentinel-executive-risk {
+	flex: 0 0 auto;
+}
+
+.sentinel-executive-risk-label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--sentinel-text-muted);
+	margin-bottom: 6px;
+}
+
+/* Overall risk badge — larger, filled pill */
+.sentinel-risk-badge {
+	display: inline-block;
+	padding: 6px 18px;
+	border-radius: 20px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.sentinel-executive-risk-hint {
+	margin: 8px 0 0;
+	font-size: 12px;
+	color: var(--sentinel-text-muted);
+	max-width: 280px;
+}
+
+.sentinel-executive-severity-counts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	flex: 1;
+}
+
+.sentinel-severity-count-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+}
+
+/* Recommended actions list */
+.sentinel-executive-actions h3 {
+	margin: 0 0 12px;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--sentinel-text);
+}
+
+.sentinel-recommendations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: sentinel-rec;
+}
+
+.sentinel-recommendation-item {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--sentinel-border);
+	counter-increment: sentinel-rec;
+}
+
+.sentinel-recommendation-item:last-child {
+	border-bottom: none;
+}
+
+.sentinel-recommendation-item::before {
+	content: counter(sentinel-rec);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: var(--sentinel-primary);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	margin-top: 1px;
+}
+
+.sentinel-recommendation-text {
+	flex: 1;
+	font-size: 13px;
+	color: var(--sentinel-text);
+	line-height: 1.5;
+}
+
+.sentinel-recommendation-cta {
+	flex-shrink: 0;
+}
+
+/* Language switcher */
+.sentinel-lang-switcher {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	padding: 0 16px;
+	font-size: 12px;
+	color: #ccd6f6;
+	flex-shrink: 0;
+}
+.sentinel-lang-switcher select {
+	background: rgba(255,255,255,.12);
+	border: 1px solid rgba(255,255,255,.25);
+	color: #fff;
+	border-radius: 4px;
+	padding: 3px 6px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.sentinel-lang-switcher select option {
+	background: #1a2332;
+	color: #fff;
+}
+.sentinel-lang-switcher select:focus {
+	outline: none;
+	border-color: #64ffda;
+}
+
+/* ========== Vulnerability actions ========== */
+.sentinel-finding-actions {
+	white-space: nowrap;
+}
+.sentinel-finding-actions .button {
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+.sentinel-vuln-mark {
+	font-size: 11px !important;
+	padding: 0 8px !important;
+	height: 24px !important;
+	line-height: 22px !important;
+	color: #475569 !important;
+}
+.sentinel-vuln-mark[data-action="open"] {
+	color: #16a34a !important;
+	border-color: #16a34a !important;
+}
+.sentinel-status-label {
+	display: inline-block;
+	background: #f1f5f9;
+	padding: 1px 7px;
+	border-radius: 99px;
+	font-size: 11px;
+}
+
+/* ========== Improved modal ========== */
+.sentinel-modal {
+	max-width: 640px !important;
+	max-height: 85vh;
+	overflow-y: auto;
+}
+.sentinel-modal h3 {
+	font-size: 15px;
+	line-height: 1.4;
+	margin: 0 0 4px;
+}
+.sentinel-modal-loading {
+	min-height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* ========== Scan type grid — more cards ========== */
+.sentinel-scan-types {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 16px;
+	margin-bottom: 24px;
+}
+.sentinel-scan-type-card {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.sentinel-scan-type-card h3 {
+	margin: 0;
+	font-size: 14px;
+}
+.sentinel-scan-type-card p {
+	margin: 0;
+	font-size: 12px;
+	color: #64748b;
+	flex: 1;
+}
+.sentinel-scan-icon {
+	font-size: 28px !important;
+	width: 28px !important;
+	height: 28px !important;
+	color: #4f46e5;
+}
+
+/* ========== Bulk toolbar ========== */
+#sentinel-bulk-action {
+	padding: 4px 8px;
+}

@@ -1,0 +1,191 @@
+/**
+ * Sentinel Reports — admin styles.
+ *
+ * Extends sentinel-admin.css with report-specific components.
+ *
+ * @package WP_Sentinel_Security
+ */
+
+/* =========================================================================
+   Report preview container
+   ========================================================================= */
+
+.sentinel-report-preview {
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 24px;
+	max-height: 600px;
+	overflow-y: auto;
+	font-size: 13px;
+	line-height: 1.7;
+}
+
+/* =========================================================================
+   Report card
+   ========================================================================= */
+
+.sentinel-report-card {
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	transition: box-shadow 0.2s;
+}
+
+.sentinel-report-card:hover {
+	box-shadow: 0 4px 12px rgba( 0, 0, 0, 0.08 );
+}
+
+.sentinel-report-card__title {
+	font-size: 15px;
+	font-weight: 600;
+	color: #0f172a;
+	margin: 0;
+}
+
+.sentinel-report-card__meta {
+	font-size: 12px;
+	color: #64748b;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.sentinel-report-card__actions {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+/* =========================================================================
+   Format badges
+   ========================================================================= */
+
+.sentinel-format-badge {
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.sentinel-format-html {
+	background: #eff6ff;
+	color: #1d4ed8;
+}
+
+.sentinel-format-json {
+	background: #fefce8;
+	color: #a16207;
+}
+
+.sentinel-format-csv {
+	background: #f0fdf4;
+	color: #15803d;
+}
+
+/* =========================================================================
+   Progress bar
+   ========================================================================= */
+
+.sentinel-progress-bar {
+	width: 100%;
+	height: 6px;
+	background: #e2e8f0;
+	border-radius: 99px;
+	overflow: hidden;
+}
+
+.sentinel-progress-fill {
+	height: 100%;
+	width: 0;
+	background: linear-gradient( 90deg, #6366f1, #4f46e5 );
+	border-radius: 99px;
+	transition: width 0.3s ease;
+}
+
+/* =========================================================================
+   Count badge (used in section headings)
+   ========================================================================= */
+
+.sentinel-count-badge {
+	display: inline-block;
+	background: #f1f5f9;
+	color: #64748b;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 1px 9px;
+	border-radius: 99px;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+/* =========================================================================
+   Generate form layout
+   ========================================================================= */
+
+.sentinel-generate-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	align-items: flex-end;
+}
+
+.sentinel-generate-form .sentinel-form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.sentinel-generate-form label {
+	font-size: 12px;
+	font-weight: 600;
+	color: #475569;
+}
+
+.sentinel-generate-form select {
+	min-width: 160px;
+}
+
+.sentinel-status-msg {
+	font-size: 13px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+/* =========================================================================
+   Print styles
+   ========================================================================= */
+
+@media print {
+	.sentinel-report-preview {
+		max-height: none;
+		border: none;
+		padding: 0;
+	}
+
+	.sentinel-report-card__actions,
+	.sentinel-header-right,
+	.sentinel-generate-form,
+	#sentinel-report-progress {
+		display: none !important;
+	}
+
+	.sentinel-card {
+		border: 1px solid #ccc;
+		box-shadow: none;
+		page-break-inside: avoid;
+	}
+
+	.sentinel-format-badge,
+	.sentinel-badge {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

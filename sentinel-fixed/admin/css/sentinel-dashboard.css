@@ -1,0 +1,241 @@
+/* ==========================================================================
+   WP Sentinel Security — Dashboard Styles
+   ========================================================================== */
+
+/* Grid Layouts */
+.sentinel-grid {
+	display: grid;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.sentinel-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.sentinel-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.sentinel-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.sentinel-stats-grid {
+	display: grid;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+/* Score Card */
+.sentinel-score-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.sentinel-score-circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 6px solid var(--score-color, #6366f1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+	transition: border-color 0.3s;
+}
+
+.sentinel-score-value {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--sentinel-text);
+}
+
+.sentinel-score-grade {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--score-color, #6366f1);
+}
+
+.sentinel-score-label {
+	font-weight: 600;
+	margin: 0 0 4px;
+	color: var(--sentinel-text);
+}
+
+/* Stat Cards */
+.sentinel-stat-card {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.sentinel-stat-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.sentinel-stat-icon .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+}
+
+.sentinel-stat-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.sentinel-stat-value {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.sentinel-stat-label {
+	font-size: 12px;
+	color: var(--sentinel-text-muted);
+	margin-top: 4px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Critical stat */
+.sentinel-stat-critical .sentinel-stat-icon {
+	background: #fef2f2;
+}
+.sentinel-stat-critical .sentinel-stat-icon .dashicons { color: #dc2626; }
+.sentinel-stat-critical .sentinel-stat-value { color: #dc2626; }
+
+/* High stat */
+.sentinel-stat-high .sentinel-stat-icon {
+	background: #fff7ed;
+}
+.sentinel-stat-high .sentinel-stat-icon .dashicons { color: #ea580c; }
+.sentinel-stat-high .sentinel-stat-value { color: #ea580c; }
+
+/* Hardening stat */
+.sentinel-stat-hardening .sentinel-stat-icon {
+	background: #faf5ff;
+}
+.sentinel-stat-hardening .sentinel-stat-icon .dashicons { color: #9333ea; }
+.sentinel-stat-hardening .sentinel-stat-value { color: #9333ea; }
+
+/* Chart containers */
+.sentinel-chart-container {
+	position: relative;
+	height: 250px;
+}
+
+/* Vuln legend */
+.sentinel-vuln-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 12px;
+	padding-top: 12px;
+	border-top: 1px solid var(--sentinel-border);
+}
+
+.sentinel-legend-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	color: var(--sentinel-text-muted);
+}
+
+.sentinel-legend-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+/* Action Cards */
+.sentinel-action-card {
+	text-align: center;
+}
+
+.sentinel-action-icon {
+	display: block;
+	font-size: 36px;
+	width: 36px;
+	height: 36px;
+	color: var(--sentinel-primary);
+	margin: 0 auto 12px;
+}
+
+.sentinel-action-card h3 {
+	margin: 0 0 8px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.sentinel-action-card p {
+	margin: 0 0 16px;
+	font-size: 13px;
+	color: var(--sentinel-text-muted);
+	min-height: 38px;
+}
+
+/* Scan type cards */
+.sentinel-scan-types {
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.sentinel-scan-type-card {
+	text-align: center;
+}
+
+.sentinel-scan-icon {
+	display: block;
+	font-size: 32px;
+	width: 32px;
+	height: 32px;
+	color: var(--sentinel-primary);
+	margin: 0 auto 12px;
+}
+
+.sentinel-scan-type-card h3 {
+	margin: 0 0 8px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.sentinel-scan-type-card p {
+	margin: 0 0 16px;
+	font-size: 12px;
+	color: var(--sentinel-text-muted);
+	min-height: 34px;
+}
+
+/* Last scan info */
+.sentinel-last-scan-info {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+}
+
+.sentinel-last-scan-info div {
+	font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+	.sentinel-grid-4 { grid-template-columns: repeat(2, 1fr); }
+	.sentinel-last-scan-info { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+	.sentinel-grid-2,
+	.sentinel-grid-3,
+	.sentinel-grid-4 { grid-template-columns: 1fr; }
+	.sentinel-nav-header { flex-direction: column; align-items: flex-start; }
+	.sentinel-nav-tabs { flex-wrap: wrap; }
+	.sentinel-last-scan-info { grid-template-columns: 1fr; }
+	.sentinel-scan-types { grid-template-columns: repeat(2, 1fr); }
+}

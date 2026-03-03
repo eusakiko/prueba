@@ -1,0 +1,772 @@
+# Translation of WP Sentinel Security to Spanish (Spain)
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Sentinel Security 2.0.0\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Dashboard"
+msgstr "Panel"
+
+msgid "Scanner"
+msgstr "Escáner"
+
+msgid "Hardening"
+msgstr "Endurecimiento"
+
+msgid "Backups"
+msgstr "Copias de seguridad"
+
+msgid "Reports"
+msgstr "Informes"
+
+msgid "Alerts"
+msgstr "Alertas"
+
+msgid "Activity"
+msgstr "Actividad"
+
+msgid "Intelligence"
+msgstr "Inteligencia"
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "Overall Risk Level"
+msgstr "Nivel de riesgo global"
+
+msgid "What this means:"
+msgstr "Qué significa esto:"
+
+msgid "Critical"
+msgstr "Crítico"
+
+msgid "High"
+msgstr "Alto"
+
+msgid "Medium"
+msgstr "Medio"
+
+msgid "Low"
+msgstr "Bajo"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Your site has active critical vulnerabilities. Immediate action is required."
+msgstr "Tu sitio tiene vulnerabilidades críticas activas. Se requiere acción inmediata."
+
+msgid "Your site has high-severity issues that need urgent attention within 48 hours."
+msgstr "Tu sitio tiene problemas de alta gravedad que necesitan atención urgente en 48 horas."
+
+msgid "Your site has moderate risks that should be addressed this week."
+msgstr "Tu sitio tiene riesgos moderados que deberían tratarse esta semana."
+
+msgid "Your site is mostly secure. Continue monitoring for new issues."
+msgstr "Tu sitio está mayormente seguro. Continúa monitorizando para detectar nuevos problemas."
+
+msgid "Critical (Do today)"
+msgstr "Crítico (Hacer hoy)"
+
+msgid "High (Within 48h)"
+msgstr "Alto (En 48 horas)"
+
+msgid "Medium (This week)"
+msgstr "Medio (Esta semana)"
+
+msgid "Low (Monitor)"
+msgstr "Bajo (Monitorizar)"
+
+msgid "Scanning..."
+msgstr "Escaneando..."
+
+msgid "Scan complete!"
+msgstr "Escaneo completado."
+
+msgid "What to do next: review the findings below and address critical issues first."
+msgstr "Qué hacer ahora: revisa los hallazgos y soluciona primero los críticos."
+
+msgid "Scan failed. Please try again."
+msgstr "El escaneo falló. Por favor, inténtalo de nuevo."
+
+msgid "Run Scan"
+msgstr "Ejecutar escaneo"
+
+msgid "Start Quick Scan"
+msgstr "Iniciar escaneo rápido"
+
+msgid "Start Full Scan"
+msgstr "Iniciar escaneo completo"
+
+msgid "Cancel Scan"
+msgstr "Cancelar escaneo"
+
+msgid "Security Scanner"
+msgstr "Escáner de seguridad"
+
+msgid "Select Scan Type"
+msgstr "Seleccionar tipo de escaneo"
+
+msgid "Full Scan"
+msgstr "Escaneo completo"
+
+msgid "Comprehensive scan of all components (5-10 min)."
+msgstr "Escaneo completo de todos los componentes (5-10 min)."
+
+msgid "Quick Scan"
+msgstr "Escaneo rápido"
+
+msgid "Fast scan: core, plugins, and config (1-2 min)."
+msgstr "Escaneo rápido: núcleo, plugins y configuración (1-2 min)."
+
+msgid "Scan in Progress"
+msgstr "Escaneo en curso"
+
+msgid "Initializing scan..."
+msgstr "Iniciando escaneo..."
+
+msgid "Scan Results"
+msgstr "Resultados del escaneo"
+
+msgid "No results yet."
+msgstr "Sin resultados todavía."
+
+msgid "No vulnerabilities found."
+msgstr "No se encontraron vulnerabilidades."
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Scan History"
+msgstr "Historial de escaneos"
+
+msgid "No scans have been run yet."
+msgstr "Todavía no se ha ejecutado ningún escaneo."
+
+msgid "View Results"
+msgstr "Ver resultados"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Issues found"
+msgstr "Problemas encontrados"
+
+msgid "Severity"
+msgstr "Gravedad"
+
+msgid "Component"
+msgstr "Componente"
+
+msgid "Title / CVE"
+msgstr "Título / CVE"
+
+msgid "CVSS"
+msgstr "CVSS"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Fix now"
+msgstr "Arreglar ahora"
+
+msgid "View guide"
+msgstr "Ver guía"
+
+msgid "View CVE on NVD"
+msgstr "Ver CVE en NVD"
+
+msgid "Details not available."
+msgstr "Detalles no disponibles."
+
+msgid "WP Sentinel Security"
+msgstr "WP Sentinel Security"
+
+msgid "Security Score"
+msgstr "Puntuación de seguridad"
+
+msgid "Hardened"
+msgstr "Endurecido"
+
+msgid "Top Recommended Actions"
+msgstr "Acciones recomendadas principales"
+
+msgid "Security Evolution"
+msgstr "Evolución de seguridad"
+
+msgid "Vulnerability Distribution"
+msgstr "Distribución de vulnerabilidades"
+
+msgid "Run a quick security scan covering core, plugins and configuration."
+msgstr "Ejecuta un escaneo rápido del núcleo, plugins y configuración."
+
+msgid "Create Backup"
+msgstr "Crear copia de seguridad"
+
+msgid "Create a full database backup before applying security changes."
+msgstr "Crea una copia de seguridad completa antes de aplicar cambios de seguridad."
+
+msgid "Generate Report"
+msgstr "Generar informe"
+
+msgid "Generate a detailed security report with findings and recommendations."
+msgstr "Genera un informe de seguridad detallado con hallazgos y recomendaciones."
+
+msgid "View Reports"
+msgstr "Ver informes"
+
+msgid "Last Scan"
+msgstr "Último escaneo"
+
+msgid "All Scans"
+msgstr "Todos los escaneos"
+
+msgid "Completed"
+msgstr "Completado"
+
+msgid "Issues Found"
+msgstr "Problemas encontrados"
+
+msgid "Risk Score"
+msgstr "Puntuación de riesgo"
+
+msgid "No scan has been run yet. Run your first scan to get started."
+msgstr "Todavía no se ha ejecutado ningún escaneo. Ejecuta el primero para empezar."
+
+msgid "Run First Scan"
+msgstr "Ejecutar primer escaneo"
+
+msgid "Recent Alerts"
+msgstr "Alertas recientes"
+
+msgid "All Alerts"
+msgstr "Todas las alertas"
+
+msgid "No alerts found. Your site looks clean!"
+msgstr "No se encontraron alertas. ¡Tu sitio parece limpio!"
+
+msgid "Excellent"
+msgstr "Excelente"
+
+msgid "Very Good"
+msgstr "Muy bueno"
+
+msgid "Good"
+msgstr "Bueno"
+
+msgid "Fair"
+msgstr "Regular"
+
+msgid "Poor"
+msgstr "Deficiente"
+
+msgid "Bad"
+msgstr "Malo"
+
+msgid "Critical Risk"
+msgstr "Riesgo crítico"
+
+msgid "Run your first security scan to discover vulnerabilities."
+msgstr "Ejecuta tu primer escaneo de seguridad para descubrir vulnerabilidades."
+
+msgid "Go to Scanner"
+msgstr "Ir al escáner"
+
+msgid "Apply hardening measures to strengthen your security posture."
+msgstr "Aplica medidas de endurecimiento para fortalecer tu postura de seguridad."
+
+msgid "Go to Hardening"
+msgstr "Ir a endurecimiento"
+
+msgid "View Findings"
+msgstr "Ver hallazgos"
+
+msgid "Your site is well-secured. Keep monitoring with regular scans."
+msgstr "Tu sitio está bien asegurado. Continúa monitorizando con escaneos regulares."
+
+msgid "Configure notification channels and view recent alerts."
+msgstr "Configura los canales de notificación y visualiza las alertas recientes."
+
+msgid "Alert Channels"
+msgstr "Canales de alerta"
+
+msgid "Configure and test your notification channels in Settings. Use the buttons below to send a test alert."
+msgstr "Configura y prueba tus canales de notificación en Ajustes. Usa los botones para enviar una alerta de prueba."
+
+msgid "Enabled"
+msgstr "Activado"
+
+msgid "Disabled"
+msgstr "Desactivado"
+
+msgid "Configure"
+msgstr "Configurar"
+
+msgid "Send Test"
+msgstr "Enviar prueba"
+
+msgid "Sendingâ¦"
+msgstr "Enviandoâ¦"
+
+msgid "Send failed."
+msgstr "El envío falló."
+
+msgid "Request failed."
+msgstr "La solicitud falló."
+
+msgid "Test alert sent successfully."
+msgstr "Alerta de prueba enviada correctamente."
+
+msgid "Alert could not be sent. Check your email settings in WordPress or configure SMTP."
+msgstr "No se pudo enviar la alerta. Comprueba la configuración de email en WordPress o configura SMTP."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Slack"
+msgstr "Slack"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Monitored Event Types"
+msgstr "Tipos de eventos monitorizados"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Channels"
+msgstr "Canales"
+
+msgid "No alerts recorded yet."
+msgstr "Todavía no se han registrado alertas."
+
+msgid "Dismiss"
+msgstr "Descartar"
+
+msgid "Creating backup..."
+msgstr "Creando copia de seguridad..."
+
+msgid "Backup created successfully!"
+msgstr "¡Copia de seguridad creada correctamente!"
+
+msgid "What to do next: you can safely apply security changes now."
+msgstr "Qué hacer ahora: puedes aplicar los cambios de seguridad con seguridad."
+
+msgid "Backup failed. Please try again."
+msgstr "La copia de seguridad falló. Por favor, inténtalo de nuevo."
+
+msgid "Backup deleted successfully."
+msgstr "Copia de seguridad eliminada correctamente."
+
+msgid "Are you sure you want to delete this backup? This action cannot be undone."
+msgstr "¿Estás seguro de que quieres eliminar esta copia de seguridad? Esta acción no se puede deshacer."
+
+msgid "Are you sure you want to restore this backup? Your current data will be replaced."
+msgstr "¿Estás seguro de que quieres restaurar esta copia de seguridad? Tus datos actuales serán reemplazados."
+
+msgid "Security Report -- Technical"
+msgstr "Informe de seguridad -- Técnico"
+
+msgid "Technical Security Report"
+msgstr "Informe de seguridad técnico"
+
+msgid "Site:"
+msgstr "Sitio:"
+
+msgid "Generated:"
+msgstr "Generado:"
+
+msgid "Schema Version:"
+msgstr "Versión de esquema:"
+
+msgid "Executive Summary"
+msgstr "Resumen ejecutivo"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Vulnerability Details"
+msgstr "Detalles de vulnerabilidades"
+
+msgid "Vulnerability"
+msgstr "Vulnerabilidad"
+
+msgid "CVE"
+msgstr "CVE"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Detected"
+msgstr "Detectado"
+
+msgid "Recommendations"
+msgstr "Recomendaciones"
+
+msgid "Appendix -- Hardening Status"
+msgstr "Apéndice -- Estado de endurecimiento"
+
+msgid "Check"
+msgstr "Comprobación"
+
+msgid "Category"
+msgstr "Categoría"
+
+msgid "Generated by WP Sentinel Security -- %s"
+msgstr "Generado por WP Sentinel Security -- %s"
+
+msgid "Switch language"
+msgstr "Cambiar idioma"
+
+msgid "Language updated. The page will reload."
+msgstr "Idioma actualizado. La página se recargará."
+
+msgid "English (default)"
+msgstr "English (predeterminado)"
+
+msgid "Scan Frequency"
+msgstr "Frecuencia de escaneo"
+
+msgid "Daily"
+msgstr "Diario"
+
+msgid "Weekly"
+msgstr "Semanal"
+
+msgid "Monthly"
+msgstr "Mensual"
+
+msgid "Save Settings"
+msgstr "Guardar ajustes"
+
+msgid "Settings saved."
+msgstr "Ajustes guardados."
+
+msgid "Activity Log"
+msgstr "Registro de actividad"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "ago"
+msgstr "hace"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "What to do next:"
+msgstr "Qué hacer ahora:"
+
+msgid "Insufficient permissions."
+msgstr "Permisos insuficientes."
+
+msgid "Invalid scan type."
+msgstr "Tipo de escaneo no válido."
+
+msgid "Failed to create scan record."
+msgstr "Error al crear el registro de escaneo."
+
+msgid "Scan not found."
+msgstr "Escaneo no encontrado."
+
+msgid "Invalid scan ID."
+msgstr "ID de escaneo no válido."
+
+msgid "Critical Vulnerability Detected"
+msgstr "Vulnerabilidad crítica detectada"
+
+msgid "A critical vulnerability has been detected on your WordPress site. Immediate action is required."
+msgstr "Se ha detectado una vulnerabilidad crítica en tu sitio WordPress. Se requiere acción inmediata."
+
+msgid "Security Scan Completed"
+msgstr "Escaneo de seguridad completado"
+
+msgid "Security scan completed. %d vulnerabilities found."
+msgstr "Escaneo de seguridad completado. Se encontraron %d vulnerabilidades."
+
+msgid "File Modification Detected"
+msgstr "Modificación de archivo detectada"
+
+msgid "An unexpected file modification was detected: %s"
+msgstr "Se detectó una modificación inesperada de archivo: %s"
+
+msgid "Brute Force Attack Alert"
+msgstr "Alerta de ataque de fuerza bruta"
+
+msgid "Multiple failed login attempts detected. A brute force attack may be in progress."
+msgstr "Se detectaron múltiples intentos de inicio de sesión fallidos. Puede estar en curso un ataque de fuerza bruta."
+
+msgid "Hardening Configuration Changed"
+msgstr "Configuración de endurecimiento modificada"
+
+msgid "A hardening setting has been modified on your WordPress site."
+msgstr "Se ha modificado un ajuste de endurecimiento en tu sitio WordPress."
+
+msgid "Backup Failed"
+msgstr "Copia de seguridad fallida"
+
+msgid "An automated backup has failed. Please check your backup configuration."
+msgstr "Una copia de seguridad automatizada ha fallado. Por favor, comprueba la configuración de copias de seguridad."
+
+msgid "Malware Detected"
+msgstr "Malware detectado"
+
+msgid "Potential malware has been detected on your WordPress site. Immediate action is required."
+msgstr "Se ha detectado posible malware en tu sitio WordPress. Se requiere acción inmediata."
+
+msgid "WP Sentinel Security Alert"
+msgstr "Alerta de WP Sentinel Security"
+
+msgid "A security event occurred on your WordPress site."
+msgstr "Se ha producido un evento de seguridad en tu sitio WordPress."
+
+msgid "WP Sentinel Security -- Test Alert"
+msgstr "WP Sentinel Security -- Alerta de prueba"
+
+msgid "This is a test alert from WP Sentinel Security. Your alert channel is working correctly."
+msgstr "Esta es una alerta de prueba de WP Sentinel Security. Tu canal de alerta funciona correctamente."
+
+msgid "WordPress could not send the email. In Docker/local environments you need an SMTP plugin (e.g. WP Mail SMTP) or configure a mail server. The alert email would go to: "
+msgstr "WordPress no pudo enviar el email. En entornos Docker/local necesitas un plugin SMTP (p.ej. WP Mail SMTP) o configurar un servidor de correo. El email de alerta se enviaría a: "
+
+msgid "Alert could not be sent. Check channel credentials in Settings."
+msgstr "No se pudo enviar la alerta. Comprueba las credenciales del canal en Ajustes."
+
+msgid "Alert dismissed."
+msgstr "Alerta descartada."
+
+msgid "Failed to dismiss alert."
+msgstr "Error al descartar la alerta."
+
+msgid "Analyze WordPress and PHP configuration (~30 s)."
+msgstr "Analizar la configuración de WordPress y PHP (~30 s)."
+
+msgid "Check installed plugins for vulnerabilities (2–3 min)."
+msgstr "Comprobar vulnerabilidades en plugins instalados (2-3 min)."
+
+msgid "Check installed themes for vulnerabilities (1–2 min)."
+msgstr "Comprobar vulnerabilidades en temas instalados (1-2 min)."
+
+msgid "Comprehensive scan of all components (5–10 min)."
+msgstr "Escaneo completo de todos los componentes (5-10 min)."
+
+msgid "Configuration"
+msgstr "Configuración"
+
+msgid "Core Integrity"
+msgstr "Integridad del núcleo"
+
+msgid "Detect unauthorized file changes and malware (3–5 min)."
+msgstr "Detectar cambios no autorizados en archivos y malware (3-5 min)."
+
+msgid "Duration"
+msgstr "Duración"
+
+msgid "Fast scan: core, plugins, and config (1–2 min)."
+msgstr "Escaneo rápido: núcleo, plugins y configuración (1-2 min)."
+
+msgid "File Monitor"
+msgstr "Monitor de archivos"
+
+msgid "Issues"
+msgstr "Problemas"
+
+msgid "Plugins"
+msgstr "Plugins"
+
+msgid "Results"
+msgstr "Resultados"
+
+msgid "Scan Config"
+msgstr "Escanear configuración"
+
+msgid "Scan Core"
+msgstr "Escanear núcleo"
+
+msgid "Scan Files"
+msgstr "Escanear archivos"
+
+msgid "Scan Plugins"
+msgstr "Escanear plugins"
+
+msgid "Scan Themes"
+msgstr "Escanear temas"
+
+msgid "Score"
+msgstr "Puntuación"
+
+msgid "Started"
+msgstr "Iniciado"
+
+msgid "Themes"
+msgstr "Temas"
+
+msgid "Verify WordPress core file integrity (1 min)."
+msgstr "Verificar la integridad de los archivos del núcleo de WordPress (1 min)."
+
+msgid "Modified core file: %s"
+msgstr "Archivo del núcleo modificado: %s"
+
+msgid "Missing core file: %s"
+msgstr "Archivo del núcleo faltante: %s"
+
+msgid "Fix Now"
+msgstr "Arreglar ahora"
+
+msgid "View Guide"
+msgstr "Ver guía"
+
+msgid "Details not available"
+msgstr "Detalles no disponibles"
+
+msgid "Run Fresh Analysis"
+msgstr "Ejecutar nuevo análisis"
+
+msgid "Analyzing..."
+msgstr "Analizando..."
+
+msgid "Analysis complete! Reload the page to see updated data."
+msgstr "Análisis completado. Recarga la página para ver los datos actualizados."
+
+msgid "Analysis failed. Please try again."
+msgstr "El análisis falló. Por favor, inténtalo de nuevo."
+
+msgid "No data. Run an analysis first."
+msgstr "Sin datos. Ejecuta un análisis primero."
+
+msgid "Last analysis: %s"
+msgstr "Último análisis: %s"
+
+msgid "Environment Fingerprint"
+msgstr "Huella del entorno"
+
+msgid "Attack Surface Map"
+msgstr "Mapa de superficie de ataque"
+
+msgid "Intelligence Layer"
+msgstr "Capa de inteligencia"
+
+msgid "Sending\xe2\x80\xa6"
+msgstr "Enviando..."
+
+msgid "All local checks run without an API key. For plugin/theme CVE data, add a free WPScan API key in %s."
+msgstr "Todos los análisis locales funcionan sin clave API. Para datos CVE de plugins/temas, añade una clave API gratuita de WPScan en %s."
+
+msgid "No server response. Check network connectivity."
+msgstr "Sin respuesta del servidor. Comprueba la conectividad de red."
+
+msgid "Permission denied (403). Try refreshing the page."
+msgstr "Permiso denegado (403). Intenta recargar la página."
+
+
+msgid "Ignore"
+msgstr "Ignorar"
+
+msgid "False positive"
+msgstr "Falso positivo"
+
+msgid "Reopen"
+msgstr "Reabrir"
+
+msgid "Ignored"
+msgstr "Ignorado"
+
+msgid "Status updated."
+msgstr "Estado actualizado."
+
+msgid "Action failed. Please try again."
+msgstr "La acción falló. Por favor, inténtalo de nuevo."
+
+msgid "Please select an action first."
+msgstr "Por favor, selecciona una acción primero."
+
+msgid "Please select at least one item."
+msgstr "Por favor, selecciona al menos un elemento."
+
+msgid "Loading..."
+msgstr "Cargando..."
+
+msgid "References"
+msgstr "Referencias"
+
+msgid "Select all"
+msgstr "Seleccionar todo"
+
+msgid "— Bulk action —"
+msgstr "— Acción masiva —"
+
+msgid "Mark as ignored"
+msgstr "Marcar como ignorado"
+
+msgid "Mark as false positive"
+msgstr "Marcar como falso positivo"
+
+msgid "Mark as fixed"
+msgstr "Marcar como corregido"
+
+msgid "Malware Scan"
+msgstr "Análisis de malware"
+
+msgid "Deep scan for malware, backdoors and obfuscated code (3–8 min)."
+msgstr "Análisis profundo de malware, backdoors y código ofuscado (3–8 min)."
+
+msgid "Scan for Malware"
+msgstr "Analizar malware"
+
+msgid "User Audit"
+msgstr "Auditoría de usuarios"
+
+msgid "Audit user accounts, roles, and password policies (~15 s)."
+msgstr "Auditar cuentas de usuario, roles y políticas de contraseñas (~15 s)."
+
+msgid "Audit Users"
+msgstr "Auditar usuarios"
+
+msgid "SSL / TLS"
+msgstr "SSL / TLS"
+
+msgid "Check SSL certificate expiry and HTTPS configuration (~10 s)."
+msgstr "Comprobar vencimiento del certificado SSL y configuración HTTPS (~10 s)."
+
+msgid "Check SSL"
+msgstr "Comprobar SSL"
+
+msgid "HTTP Headers"
+msgstr "Cabeceras HTTP"
+
+msgid "Verify security response headers (CSP, HSTS, X-Frame, etc.) (~10 s)."
+msgstr "Verificar cabeceras de respuesta de seguridad (CSP, HSTS, X-Frame, etc.) (~10 s)."
+
+msgid "Check Headers"
+msgstr "Comprobar cabeceras"
+
+msgid "Compliance"
+msgstr "Cumplimiento"
+
+msgid "Check OWASP Top 10, PCI-DSS and GDPR compliance (~30 s)."
+msgstr "Comprobar cumplimiento de OWASP Top 10, PCI-DSS y GDPR (~30 s)."
+
+msgid "Check Compliance"
+msgstr "Comprobar cumplimiento"
+
+msgid "Database"
+msgstr "Base de datos"
+
+msgid "Check for DB prefixes, user privileges and SQL injection risks (~15 s)."
+msgstr "Comprobar prefijos de BD, privilegios de usuario y riesgos de inyección SQL (~15 s)."
+
+msgid "Scan Database"
+msgstr "Analizar base de datos"
+
+msgid "%d vulnerabilities updated."
+msgstr "%d vulnerabilidades actualizadas."

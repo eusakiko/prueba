@@ -1,0 +1,181 @@
+# Copyright (C) 2024 WP Sentinel Security
+# This file is distributed under the same license as the WP Sentinel Security package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Sentinel Security 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/eusakiko/WP-Hardening-Suite/issues\n"
+"POT-Creation-Date: 2024-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: WP Sentinel Security\n"
+"X-Domain: wp-sentinel-security\n"
+
+#. Plugin Name of the plugin.
+msgid "WP Sentinel Security"
+msgstr ""
+
+#. Plugin URI of the plugin.
+msgid "https://github.com/eusakiko/WP-Hardening-Suite"
+msgstr ""
+
+#. Description of the plugin.
+msgid "Advanced security plugin for WordPress — Detection, analysis and vulnerability management."
+msgstr ""
+
+#. Author of the plugin.
+msgid "WP Sentinel Security"
+msgstr ""
+
+#: wp-sentinel-security.php
+msgid "WP Sentinel Security requires PHP %1$s or higher. Your current PHP version is %2$s."
+msgstr ""
+
+#: wp-sentinel-security.php
+msgid "WP Sentinel Security requires WordPress %1$s or higher. Your current WordPress version is %2$s."
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Sentinel Security"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Scanner"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Hardening"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Backups"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Reports"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Alerts"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Activity"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Settings"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Scanning..."
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Scan complete!"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Scan failed. Please try again."
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Creating backup..."
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Backup created successfully!"
+msgstr ""
+
+#: admin/class-sentinel-admin.php
+msgid "Backup failed. Please try again."
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "WP Sentinel Security"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Run Scan"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Security Score"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Critical"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "High"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Hardened"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Security Evolution"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Vulnerability Distribution"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Quick Scan"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Create Backup"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Generate Report"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Recent Alerts"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Last Scan"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Excellent"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Very Good"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Good"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Fair"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Poor"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Bad"
+msgstr ""
+
+#: includes/utils/class-scoring-engine.php
+msgid "Critical Risk"
+msgstr ""
