@@ -73,6 +73,10 @@ class Core_Integrity {
 
 		// Check each expected file.
 		foreach ( $checksums as $relative_path => $expected_md5 ) {
+			if ( $this->is_mutable_content_path( $relative_path ) ) {
+				continue;
+			}
+
 			$full_path = ABSPATH . $relative_path;
 
 			if ( ! file_exists( $full_path ) ) {
@@ -215,5 +219,33 @@ class Core_Integrity {
 		}
 
 		return $extra;
+	}
+
+	/**
+	 * Determine if a checksum path belongs to mutable wp-content assets.
+	 *
+	 * Files inside these paths are frequently added, removed or changed by normal
+	 * WordPress updates (translations, bundled themes/plugins), which can produce
+	 * noisy false positives in integrity scans.
+	 *
+	 * @param string $relative_path Relative path from ABSPATH.
+	 * @return bool
+	 */
+	private function is_mutable_content_path( $relative_path ) {
+		$relative_path = wp_normalize_path( ltrim( (string) $relative_path, '/' ) );
+
+		$mutable_prefixes = array(
+			'wp-content/languages/',
+			'wp-content/themes/',
+			'wp-content/plugins/',
+		);
+
+		foreach ( $mutable_prefixes as $prefix ) {
+			if ( 0 === strpos( $relative_path, $prefix ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }
