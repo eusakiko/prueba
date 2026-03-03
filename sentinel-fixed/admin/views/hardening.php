@@ -19,12 +19,12 @@ require SENTINEL_PLUGIN_DIR . 'admin/views/partials/header.php';
 
 // ── Category metadata ─────────────────────────────────────────────────────────
 $category_labels = array(
-	'file_security'     => __( 'File Security', 'wp-sentinel-security' ),
-	'wp_config'         => __( 'WP Config Hardening', 'wp-sentinel-security' ),
-	'server_config'     => __( 'Server Configuration', 'wp-sentinel-security' ),
-	'user_security'     => __( 'User Security', 'wp-sentinel-security' ),
-	'database_security' => __( 'Database Security', 'wp-sentinel-security' ),
-	'api_security'      => __( 'API Security', 'wp-sentinel-security' ),
+	'file_security'     => __( 'Seguridad de archivos', 'wp-sentinel-security' ),
+	'wp_config'         => __( 'Endurecimiento de WP-Config', 'wp-sentinel-security' ),
+	'server_config'     => __( 'Configuración del servidor', 'wp-sentinel-security' ),
+	'user_security'     => __( 'Seguridad de usuarios', 'wp-sentinel-security' ),
+	'database_security' => __( 'Seguridad de base de datos', 'wp-sentinel-security' ),
+	'api_security'      => __( 'Seguridad de API', 'wp-sentinel-security' ),
 );
 
 $category_icons = array(
@@ -78,9 +78,9 @@ foreach ( $checks as $check ) {
 		<div class="sentinel-header-left">
 			<span class="dashicons dashicons-shield sentinel-header-icon"></span>
 			<div>
-				<h1><?php esc_html_e( 'Hardening Engine', 'wp-sentinel-security' ); ?></h1>
+				<h1><?php esc_html_e( 'Motor de Endurecimiento', 'wp-sentinel-security' ); ?></h1>
 				<p class="sentinel-header-subtitle">
-					<?php esc_html_e( 'Apply, monitor, and revert security hardening measures across your WordPress installation.', 'wp-sentinel-security' ); ?>
+					<?php esc_html_e( 'Aplica, supervisa y revierte medidas de endurecimiento de seguridad en tu instalación de WordPress.', 'wp-sentinel-security' ); ?>
 				</p>
 			</div>
 		</div>
@@ -91,7 +91,7 @@ foreach ( $checks as $check ) {
 				data-nonce="<?php echo esc_attr( wp_create_nonce( 'sentinel_hardening_nonce' ) ); ?>"
 			>
 				<span class="dashicons dashicons-yes-alt" style="vertical-align: middle; margin-right: 4px;"></span>
-				<?php esc_html_e( 'Apply All Recommended', 'wp-sentinel-security' ); ?>
+				<?php esc_html_e( 'Aplicar todo lo recomendado', 'wp-sentinel-security' ); ?>
 			</button>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ foreach ( $checks as $check ) {
 				<span class="sentinel-score-value"><?php echo esc_html( $score ); ?></span>
 				<span class="sentinel-score-grade"><?php echo esc_html( $score_grade ); ?></span>
 			</div>
-			<p class="sentinel-score-label"><?php esc_html_e( 'Hardening Score', 'wp-sentinel-security' ); ?></p>
+			<p class="sentinel-score-label"><?php esc_html_e( 'Puntuación de endurecimiento', 'wp-sentinel-security' ); ?></p>
 		</div>
 
 		<div class="sentinel-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
@@ -112,7 +112,7 @@ foreach ( $checks as $check ) {
 			<h2 style="margin: 8px 0 4px; font-size: 28px; color: #16a34a;">
 				<?php echo esc_html( $applied_count ); ?>
 			</h2>
-			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'Checks Applied', 'wp-sentinel-security' ); ?></p>
+			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'Controles aplicados', 'wp-sentinel-security' ); ?></p>
 		</div>
 
 		<div class="sentinel-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
@@ -120,7 +120,7 @@ foreach ( $checks as $check ) {
 			<h2 style="margin: 8px 0 4px; font-size: 28px; color: #d97706;">
 				<?php echo esc_html( $partial_count ); ?>
 			</h2>
-			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'Partial', 'wp-sentinel-security' ); ?></p>
+			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'Parcial', 'wp-sentinel-security' ); ?></p>
 		</div>
 
 		<div class="sentinel-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
@@ -128,7 +128,7 @@ foreach ( $checks as $check ) {
 			<h2 style="margin: 8px 0 4px; font-size: 28px; color: #dc2626;">
 				<?php echo esc_html( $total_checks - $applied_count - $partial_count ); ?>
 			</h2>
-			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'Not Applied', 'wp-sentinel-security' ); ?></p>
+			<p style="margin: 0; color: #6b7280;"><?php esc_html_e( 'No aplicado', 'wp-sentinel-security' ); ?></p>
 		</div>
 
 	</div>
@@ -146,7 +146,7 @@ foreach ( $checks as $check ) {
 		<button
 			type="button"
 			class="sentinel-notice-dismiss"
-			aria-label="<?php esc_attr_e( 'Dismiss notification', 'wp-sentinel-security' ); ?>"
+			aria-label="<?php esc_attr_e( 'Cerrar notificación', 'wp-sentinel-security' ); ?>"
 			style="float: right; background: none; border: none; cursor: pointer; font-size: 16px; line-height: 1;"
 		>&times;</button>
 	</div>
@@ -179,7 +179,7 @@ foreach ( $checks as $check ) {
 						echo esc_html(
 							sprintf(
 								/* translators: 1: applied count, 2: total count */
-								__( '%1$d / %2$d applied', 'wp-sentinel-security' ),
+								__( '%1$d / %2$d aplicados', 'wp-sentinel-security' ),
 								$cat_applied,
 								$cat_total
 							)
@@ -200,10 +200,10 @@ foreach ( $checks as $check ) {
 
 					// Status badge config.
 					$status_labels = array(
-						'applied'     => __( '✅ Applied', 'wp-sentinel-security' ),
-						'not_applied' => __( '❌ Not Applied', 'wp-sentinel-security' ),
-						'partial'     => __( '⚠️ Partial', 'wp-sentinel-security' ),
-						'unknown'     => __( '? Unknown', 'wp-sentinel-security' ),
+						'applied'     => __( '✅ Aplicado', 'wp-sentinel-security' ),
+						'not_applied' => __( '❌ No aplicado', 'wp-sentinel-security' ),
+						'partial'     => __( '⚠️ Parcial', 'wp-sentinel-security' ),
+						'unknown'     => __( '? Desconocido', 'wp-sentinel-security' ),
 					);
 					$status_badge_map = array(
 						'applied'     => 'completed',
@@ -238,7 +238,7 @@ foreach ( $checks as $check ) {
 										<?php
 										echo esc_html(
 											/* translators: %s: risk level name */
-											sprintf( __( '%s Risk', 'wp-sentinel-security' ), ucfirst( $risk ) )
+											sprintf( __( 'Riesgo %s', 'wp-sentinel-security' ), ucfirst( $risk ) )
 										);
 										?>
 									</span>
@@ -653,10 +653,10 @@ foreach ( $checks as $check ) {
 			var details = checkStatus.details || '';
 
 			var labelMap = {
-				applied:     '<?php echo esc_js( __( '✅ Applied', 'wp-sentinel-security' ) ); ?>',
-				not_applied: '<?php echo esc_js( __( '❌ Not Applied', 'wp-sentinel-security' ) ); ?>',
-				partial:     '<?php echo esc_js( __( '⚠️ Partial', 'wp-sentinel-security' ) ); ?>',
-				unknown:     '<?php echo esc_js( __( '? Unknown', 'wp-sentinel-security' ) ); ?>',
+				applied:     '<?php echo esc_js( __( '✅ Aplicado', 'wp-sentinel-security' ) ); ?>',
+				not_applied: '<?php echo esc_js( __( '❌ No aplicado', 'wp-sentinel-security' ) ); ?>',
+				partial:     '<?php echo esc_js( __( '⚠️ Parcial', 'wp-sentinel-security' ) ); ?>',
+				unknown:     '<?php echo esc_js( __( '? Desconocido', 'wp-sentinel-security' ) ); ?>',
 			};
 
 			var badgeMap = {
