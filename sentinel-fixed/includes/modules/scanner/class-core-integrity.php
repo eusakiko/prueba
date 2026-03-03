@@ -76,17 +76,19 @@ class Core_Integrity {
 			$full_path = ABSPATH . $relative_path;
 
 			if ( ! file_exists( $full_path ) ) {
+				$assessment = $this->get_path_assessment( $relative_path, 'missing' );
+
 				$vulnerabilities[] = array(
 					'component_type'    => 'core',
 					'component_name'    => 'WordPress Core',
 					'component_version' => get_bloginfo( 'version' ),
 					'vulnerability_id'  => 'core-missing-' . md5( $relative_path ),
 					'title'             => sprintf( 'Missing core file: %s', $relative_path ),
-					'description'       => sprintf( 'The WordPress core file "%s" is missing. This may indicate a corrupted installation.', $relative_path ),
-					'severity'          => 'high',
-					'cvss_score'        => 7.5,
-					'cvss_vector'       => 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N',
-					'recommendation'    => 'Reinstall WordPress core files using the WordPress admin update process or by downloading a fresh copy from wordpress.org.',
+					'description'       => sprintf( 'The WordPress core file "%s" is missing. %s', $relative_path, $assessment['description_suffix'] ),
+					'severity'          => $assessment['severity'],
+					'cvss_score'        => $assessment['cvss_score'],
+					'cvss_vector'       => $assessment['cvss_vector'],
+					'recommendation'    => $assessment['recommendation'],
 					'reference_urls'    => wp_json_encode( array( 'https://wordpress.org/download/' ) ),
 				);
 				continue;
@@ -95,17 +97,19 @@ class Core_Integrity {
 			// Compare MD5 hash.
 			$actual_md5 = md5_file( $full_path );
 			if ( $actual_md5 !== $expected_md5 ) {
+				$assessment = $this->get_path_assessment( $relative_path, 'modified' );
+
 				$vulnerabilities[] = array(
 					'component_type'    => 'core',
 					'component_name'    => 'WordPress Core',
 					'component_version' => get_bloginfo( 'version' ),
 					'vulnerability_id'  => 'core-modified-' . md5( $relative_path ),
 					'title'             => sprintf( 'Modified core file: %s', $relative_path ),
-					'description'       => sprintf( 'The WordPress core file "%s" has been modified. Expected MD5: %s, Actual MD5: %s.', $relative_path, $expected_md5, $actual_md5 ),
-					'severity'          => 'critical',
-					'cvss_score'        => 9.8,
-					'cvss_vector'       => 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H',
-					'recommendation'    => 'Immediately review the modified file for malicious code and restore the original from a known-good source.',
+					'description'       => sprintf( 'The WordPress core file "%s" has been modified. Expected MD5: %s, Actual MD5: %s. %s', $relative_path, $expected_md5, $actual_md5, $assessment['description_suffix'] ),
+					'severity'          => $assessment['severity'],
+					'cvss_score'        => $assessment['cvss_score'],
+					'cvss_vector'       => $assessment['cvss_vector'],
+					'recommendation'    => $assessment['recommendation'],
 					'reference_urls'    => wp_json_encode( array( 'https://wordpress.org/download/' ) ),
 				);
 			}
@@ -215,5 +219,71 @@ class Core_Integrity {
 		}
 
 		return $extra;
+	}
+
+	/**
+	 * Return severity metadata based on path and finding type to reduce false positives.
+	 *
+	 * @param string $relative_path Relative path from ABSPATH.
+	 * @param string $finding_type  Finding type (missing|modified).
+	 * @return array
+	 */
+	private function get_path_assessment( $relative_path, $finding_type ) {
+		$relative_path = wp_normalize_path( ltrim( (string) $relative_path, '/' ) );
+
+		$default = array(
+			'severity'           => 'critical',
+			'cvss_score'         => 9.8,
+			'cvss_vector'        => 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H',
+			'description_suffix' => 'This may indicate a compromised installation.',
+			'recommendation'     => 'Immediately review the file for malicious code and restore the original from a known-good source.',
+		);
+
+		if ( 'missing' === $finding_type ) {
+			$default['severity']           = 'high';
+			$default['cvss_score']         = 7.5;
+			$default['cvss_vector']        = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N';
+			$default['description_suffix'] = 'This may indicate a corrupted installation.';
+			$default['recommendation']     = 'Reinstall WordPress core files using the WordPress admin update process or by downloading a fresh copy from wordpress.org.';
+		}
+
+		if ( $this->is_translation_file( $relative_path ) || $this->is_bundled_content_path( $relative_path ) ) {
+			return array(
+				'severity'           => 'low',
+				'cvss_score'         => 2.7,
+				'cvss_vector'        => 'CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N',
+				'description_suffix' => 'This path belongs to mutable bundled/translations content and is often changed by normal updates or cleanup.',
+				'recommendation'     => 'Validate that this change is expected. If you removed default themes/plugins/translations intentionally, you can ignore this finding.',
+			);
+		}
+
+		return $default;
+	}
+
+	/**
+	 * Check if path is a WordPress translation asset.
+	 *
+	 * @param string $relative_path Relative path.
+	 * @return bool
+	 */
+	private function is_translation_file( $relative_path ) {
+		if ( 0 !== strpos( $relative_path, 'wp-content/languages/' ) ) {
+			return false;
+		}
+
+		$extension = strtolower( pathinfo( $relative_path, PATHINFO_EXTENSION ) );
+		return in_array( $extension, array( 'po', 'mo', 'l10n.php' ), true );
+	}
+
+	/**
+	 * Check if path belongs to bundled plugins/themes under wp-content.
+	 *
+	 * @param string $relative_path Relative path.
+	 * @return bool
+	 */
+	private function is_bundled_content_path( $relative_path ) {
+		return 0 === strpos( $relative_path, 'wp-content/themes/twenty' )
+			|| 0 === strpos( $relative_path, 'wp-content/plugins/akismet/' )
+			|| 0 === strpos( $relative_path, 'wp-content/plugins/hello.php' );
 	}
 }

@@ -40,7 +40,13 @@ $last_scan_ts  = $last_scan_row ? strtotime( $last_scan_row->completed_at ) : fa
 
 // ── Available roles for 2FA enforcement ───────────────────────────────────
 $all_roles    = wp_roles()->roles;
-$role_choices = array_map( fn( $r ) => translate_user_role( $r['name'] ), $all_roles );
+$role_choices = array_map(
+	static function ( $role ) {
+		return translate_user_role( $role['name'] );
+	},
+	$all_roles
+);
+?>
 
 <div class="wrap sentinel-wrap">
 
